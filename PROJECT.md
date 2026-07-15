@@ -1,4 +1,4 @@
-# Project Title (REPLACE THIS with your project's name)
+# Aerodynamical Model of a Sphere Using the Lattice Boltzmann Method
 
 ## What it is
 REPLACE THIS: 2-4 sentences a stranger could understand. What does your program
@@ -14,5 +14,4 @@ REPLACE THIS: 2-4 sentences on the interesting part of the code. Which function
 does the magic? What was the hardest bug you fixed?
 
 ## Built by
-REPLACE THIS: your name(s), and anything you used for help or inspiration
-(tutorials, art sources, your instructor, teammates).
+Killian Murphy with massive aid from Google Gemini.
