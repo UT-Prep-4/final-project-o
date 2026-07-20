@@ -55,8 +55,9 @@ TRACK C: YOUR OWN IDEA
 =============================== PLAN FIRST ====================================
 Before you write code, fill this in (it will keep you honest all week):
 
-  MY PROJECT: Rudimentary 3D aerodynamic model
-  THE PIECES I NEED TO BUILD: (list 3-6 functions or parts)
+  MY PROJECT: 3D aerodynamic (fluid) model using LBM
+  THE PIECES I NEED TO BUILD: Setup dimensions, define fluid directions and weight (Lattice Boltzmann Method),
+  
   WHAT I WILL DEMO AT SHOWCASE: (the 60-second version)
 
 ==============================================================================
@@ -71,8 +72,8 @@ import pyvista as pv
 # 1. Setup Stable Grid Dimensions & Flow Velocity
 NX, NY, NZ = 60, 30, 30
 STEPS = 300
-tau = 0.8               # Viscosity safety controller
-init_velocity = 0.02    # Lower speed prevents lattice divergence
+tau = 0.8
+init_velocity = 0.02
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # 2. Define D3Q19 Lattice Directions and Weights
@@ -201,8 +202,8 @@ plotter = pv.Plotter()
 
 color_bar_styles = {
     "title": "Velocity Magnitude",
-    "color": "white",          # Forces the text letters to turn bright white
-    "shadow": True,            # Drops a black shadow behind the text to make it pop
+    "color": "white",
+    "shadow": True,
     "font_family": "arial",
     "title_font_size": 16,
     "label_font_size": 14
@@ -234,15 +235,6 @@ else:
     print("[!] Adjusting streamline source bounds to catch active flow...")
 
 plotter.add_axes()
-
-color_bar_styles = {
-    "title": "Velocity Magnitude (m/s)",
-    "color": "white",
-    "shadow": True,
-    "font_family": "arial",
-    "title_font_size": 16,
-    "label_font_size": 14
-}
 
 plotter.show_grid(color = "white")
 plotter.set_background("#0B0C10")
