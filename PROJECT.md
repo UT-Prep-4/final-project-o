@@ -1,23 +1,22 @@
 # Fluid Model by Lattice Boltzmann Method
 
 ## What it is
-REPLACE THIS: 2-4 sentences a stranger could understand. What does your program
-do? What makes it cool? This is the paragraph you would put on a resume or in a
-college application, so write it like you're proud of it.
 
-This program runs a fluid simulation modeling the air flow around an object in a 3D space. Right now, I've got it set up calculating the dynamics of a sphere, but what's cool about it is that the math is set up such that it could model the dynamics of any 3D geometry.
+This program runs a fluid simulation modeling the 3D flow of air about a sphere obstacle in a wind tunnel. It uses the Lattice Boltzmann Method in D3Q19 lattice configuration -- where air flow is calculated by the probability of particle cluster movement in 19 discrete directions within a 3D pixel -- instead of solving the full Navier Stokes equations. Right now, I've got it set up calculating and modeling the dynamics of a sphere, but what's cool about it is that the math is set up such that it could model the flow about any 3D obstacle geometry.
 
 ## How to run it
-REPLACE THIS: exact steps. For example: "Run python final_project.py in the
-terminal, then open port 6080 to see the game window. Use the arrow keys to move."
 
-- Run python final_project.py in the terminal
 - open port 6080
-- connect to 
+- connect to noVNC
+- run python final_project.py in the terminal
+- wait until the terminal gives "Launching complete aerodynamic window!" (may take some reloading)
+- access the noVNC tab and pan with the mouse!
 
 ## How it works
 REPLACE THIS: 2-4 sentences on the interesting part of the code. Which function
 does the magic? What was the hardest bug you fixed?
 
+So, I've got the code separated into 7 blocks, and we'll consider each a function, as that's pretty much what they are. Of them, block 5 plays the biggest role; it's where the main fluid simulation loop occurs. I use a second-order Taylor expansion of the continuous Maxwell-Boltzmann distribution
+
 ## Built by
-Killian Murphy with massive aid from Google Gemini.
+Killian Murphy with massive aid from Google Gemini AI.
